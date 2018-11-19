@@ -1,6 +1,7 @@
 @extends('layout.layout')
 
 @section('content')
+   
     <div class="panel-body">
         @if (session('status'))
             <div class="alert alert-success">
@@ -88,7 +89,7 @@
             </div>
         @endif
         <br>
-        <a type="button" href="/resumes/create-step1" class="btn btn-warning">Back</a>
+        <a type="button" href="/resumes/create-step1" class="btn btn-success">Back</a>
        <!-- <a type="button" href="/resumes/create-step3" class="btn btn-warning">Next</a> -->
         <button type="submit" class="btn btn-primary">Send</button>
     </form>

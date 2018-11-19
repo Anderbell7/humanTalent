@@ -29,7 +29,7 @@
             </div>
         @endif
         <br>
-        <a type="button" href="/resumes/create-step2" class="btn btn-warning">Back</a>
+        <a type="button" href="/resumes/create-step2" class="btn btn-success">Back</a>
         <!--<a type="button" href="/resumes/create-step4" class="btn btn-warning">Next</a>-->
         <button type="submit" class="btn btn-primary">Send</button>
     </form>

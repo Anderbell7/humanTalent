@@ -10,6 +10,7 @@ use App\ComplementEducation;
 use App\WorkExperience;
 use App\Languages;
 use Illuminate\Http\Request;
+use Input;
 
 
 class CurriculumController extends Controller
@@ -244,7 +245,7 @@ class CurriculumController extends Controller
 
 
     /**
-     * Show the step 7 Form for creating a new Curriculum.
+     * Show the step 6 Form for creating a new Curriculum.
      *
      * @return \Illuminate\Http\Response
      */
@@ -255,7 +256,7 @@ class CurriculumController extends Controller
     }
 
     /**
-     * Post Request to store step7 info in session
+     * Post Request to store step6 info in session
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -337,7 +338,6 @@ class CurriculumController extends Controller
         return redirect('/resumes/uploadFiles');
 
     }
-
     
     // /**
     //  * Show the step 2 Form for creating a new Curriculum.
@@ -377,56 +377,5 @@ class CurriculumController extends Controller
 
     // }
 
-    // /**
-    //  * Show the Curriculum Review page
-    //  *
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function removeImage(Request $request)
-    // {
-    //     $curriculum = $request->session()->get('Curriculum');
-    //     $curriculum->CurriculumImg = null;
-    //     return view('resumes.create-step2',compact('Curriculum', $curriculum));
-    // }
-
-    /**
-     * Show the Curriculum Review page
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function createStep8(Request $request)
-    {
-        $curriculum = $request->session()->get('Curriculum');
-        return view('resumes.create-step8',compact('Curriculum',$curriculum));
-    }
-
-    /**
-     * Store Curriculum
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $curriculum = $request->session()->get('Curriculum');
-        $curriculum->save();
-        return redirect('/resumes');
-    }
-
-    public function languages(){
-        return view('curriculum.languages');
-    }
-
-
-    /**
-     * Display a listing of the employes.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index(Request $request)
-    {
-        $request->session()->forget('Curriculum');
-        $resumes = Curriculum::all();
-        return view('resumes.index',compact('resumes',$resumes));
-    }
 
 }

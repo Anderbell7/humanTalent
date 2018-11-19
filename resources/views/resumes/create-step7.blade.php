@@ -1,6 +1,16 @@
 @extends('layout.layout')
 
 @section('content')
+
+    <div class="panel-body">
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
+        You are logged in!
+    </div>
+    
     <h1>Languages ​​you master</h1>
     <hr>
     <form action="/resumes/create-step7" method="post">
@@ -27,7 +37,7 @@
                 </ul>
             </div>
         @endif
-        <a type="button" href="/resumes/create-step6" class="btn btn-warning">Back</a>
+        <a type="button" href="/resumes/create-step6" class="btn btn-success">Back</a>
         <!--a type="button" href="/resumes/uploadFiles" class="btn btn-warning">Next</a-->
         <button type="submit" class="btn btn-primary">Send</button>
     </form>
