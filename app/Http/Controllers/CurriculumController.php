@@ -11,6 +11,7 @@ use App\WorkExperience;
 use App\Languages;
 use Illuminate\Http\Request;
 use Input;
+use Auth;
 
 
 class CurriculumController extends Controller
@@ -38,6 +39,7 @@ class CurriculumController extends Controller
         #PersonalInfo::personalInfo($request->all());
         
         $personalInfo = new PersonalInfo;
+        $personalInfo->user_id = $request->input('user_id');
         $personalInfo->name = $request->input('name');
         $personalInfo->lastName = $request->input('lastName');
         $personalInfo->birthdate = $request->input('birthdate');
@@ -86,13 +88,18 @@ class CurriculumController extends Controller
      */
     public function postCreateStep2(Request $request)
     {
-
+        
         #dd($request->all());
         $request->merge([ 
-            'skills' => implode(', ', (array) $request->get('skills'))
+            'skills'  => implode(', ', (array) $request->get('skills')),
             ]);
-    
+
             AcquiredSkills::create($request->all());
+
+            // $skills = new AcquiredSkills;
+            // $skills->user_id = $request->input('user_id');
+            // $skills->save();  
+            
 
         if(empty($request->session()->get('Curriculum'))){
             $curriculum = new Curriculum();
@@ -130,6 +137,7 @@ class CurriculumController extends Controller
         #PrincipalFunctions::principalFunctions($request->all());
         
         $principalFunctions = new PrincipalFunctions;
+        $principalFunctions->user_id = $request->input('user_id');
         $principalFunctions->functions = $request->input('functions');
         $principalFunctions->save(); 
         #dd($request->all());
@@ -170,6 +178,7 @@ class CurriculumController extends Controller
         public function postCreateStep4(Request $request){
         
         $formalEducation = new FormalEducation;
+        $formalEducation->user_id = $request->input('user_id');
         $formalEducation->modality = $request->input('modality');
         $formalEducation->grade = $request->input('grade');
         $formalEducation->graduate = $request->input('graduate');
@@ -217,6 +226,7 @@ class CurriculumController extends Controller
         public function postCreateStep5(Request $request){
         
         $complementEducation = new ComplementEducation;
+        $complementEducation->user_id = $request->input('user_id');
         $complementEducation->modality = $request->input('modality');
         $complementEducation->course = $request->input('course');
         $complementEducation->hourlyintensity = $request->input('hourlyintensity');
@@ -266,6 +276,7 @@ class CurriculumController extends Controller
             # WorkExperience::workExperience($request->all());
             
         $workExperience = new WorkExperience;
+        $workExperience->user_id = $request->input('user_id');
         $workExperience->company = $request->input('company');
         $workExperience->startDate = $request->input('startDate');
         $workExperience->endDate = $request->input('endDate');
@@ -317,6 +328,7 @@ class CurriculumController extends Controller
        # Languages::languages($request->all());
         
         $languages = new Languages;
+        $languages->user_id = $request->input('user_id');
         $languages->language = $request->input('language');
         $languages->level = $request->input('level');
         $languages->institute = $request->input('institute');
@@ -338,6 +350,8 @@ class CurriculumController extends Controller
         return redirect('/resumes/uploadFiles');
 
     }
+
+
     
     // /**
     //  * Show the step 2 Form for creating a new Curriculum.

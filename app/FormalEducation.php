@@ -14,7 +14,7 @@ class FormalEducation extends Model
     * @var array
     */
    protected $fillable = [
-       'modality', 'grade', 'graduate', 'degree', 'title', 'college',  
+    'user_id', 'modality', 'grade', 'graduate', 'degree', 'title', 'college',  
    ];
 
  

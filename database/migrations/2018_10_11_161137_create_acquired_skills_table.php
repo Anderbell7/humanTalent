@@ -15,10 +15,14 @@ class CreateAcquiredSkillsTable extends Migration
     {
         Schema::create('acquired_skills', function (Blueprint $table) {
             $table->increments('id');
-           # $table->integer('idUser');
-            $table->string('skills');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('skills')->nullable();
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
+        Schema::disableForeignKeyConstraints();
     }
     //->default(1)
     /**
@@ -29,5 +33,6 @@ class CreateAcquiredSkillsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('acquired_skills');
+        
     }
 }

@@ -17,6 +17,11 @@
     <form action="/resumes/create-step1" method="post">
         {{ csrf_field() }}
         
+        <div style="display: none">
+            <label for="title">id</label>
+            <input type="text" value="{{ auth()->user()->id }}" class="form-control" id="user_id"  name="user_id">
+        </div>
+        
         <div class="form-group">
             <label for="title">Name</label>
             <input type="text" value="{{{ $curriculum->name or '' }}}" class="form-control" id="taskTitle"  name="name">
@@ -30,8 +35,8 @@
             <input type="date" value="{{{ $curriculum->birthdate or '' }}}" class="form-control" id="taskBirthdate"  name="birthdate">
         </div>
         <div class="form-group">
-            <label for="identityDocument">Document number</label>
-            <input type="text" value="{{{ $curriculum->identityDocument or '' }}}" class="form-control" id="taskIdentityDocument"  name="identityDocument">
+            <label for="identity">Document number</label>
+            <input type="text" value="{{{ $curriculum->identity or '' }}}" class="form-control" id="identity"  name="identity">
         </div>
         <div class="form-group">
             <label for="civilStatus">Civil Status</label>

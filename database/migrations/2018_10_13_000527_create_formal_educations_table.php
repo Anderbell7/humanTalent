@@ -15,14 +15,19 @@ class CreateFormalEducationsTable extends Migration
     {
         Schema::create('formal_educations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('modality');
-            $table->string('grade');
-            $table->string('graduate');
-            $table->date('degree');
-            $table->string('title');
-            $table->string('college');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('modality')->nullable();
+            $table->string('grade')->nullable();
+            $table->string('graduate')->nullable();
+            $table->date('degree')->nullable();
+            $table->string('title')->nullable();
+            $table->string('college')->nullable();
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
+        Schema::disableForeignKeyConstraints();
     }
 
     /**

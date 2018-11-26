@@ -15,28 +15,34 @@ class CreatePersonalInfosTable extends Migration
     {
         Schema::create('personal_infos', function (Blueprint $table) {
             $table->increments('id');
-           # $table->integer('idUser');
-            $table->string('name');
-            $table->string('lastName');
-            $table->date('birthdate');
-            $table->string('identity');
-            $table->string('civilStatus');
-            $table->string('address');
-            $table->integer('phone');
-            $table->integer('cellPhone');
-            $table->string('email');
-            #$table->rememberToken();
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('name')->nullable();
+            $table->string('lastName')->nullable();
+            $table->date('birthdate')->nullable();
+            $table->string('identity')->nullable();
+            $table->string('civilStatus')->nullable();
+            $table->string('address')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('cellPhone')->nullable();
+            $table->string('email')->nullable();
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
+        Schema::disableForeignKeyConstraints();
     }
+    
 
     /**
      * Reverse the migrations.
      *
      * @return void
      */
+
     public function down()
     {
         Schema::dropIfExists('personal_infos');
+        
     }
 }

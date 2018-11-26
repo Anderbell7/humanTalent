@@ -25,6 +25,7 @@
     <title>{{ config('app.name', 'Home') }}</title>
 
     <!-- Styles -->
+    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -32,7 +33,7 @@
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
-
+                <img src="https://www.aldeamo.com/wp-content/uploads/2018/09/logo-x200ancho.png" srcset="https://www.aldeamo.com/wp-content/uploads/2018/09/logo-x200ancho.png 1x, https://www.aldeamo.com/wp-content/uploads/2018/09/logo-x400ancho.png 2x" width="200" height="53" style="max-height: 53px; height: auto;" alt="Aldeamo Logo" retina_logo_url="https://www.aldeamo.com/wp-content/uploads/2018/09/logo-x400ancho.png" class="fusion-standard-logo">
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
                         <span class="sr-only">Toggle Navigation</span>

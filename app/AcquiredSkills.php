@@ -13,7 +13,7 @@ class AcquiredSkills extends Model
     * @var array
     */
    protected $fillable = [
-       'skills', 
+    'user_id', 'skills', 
    ];
    
 

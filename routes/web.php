@@ -45,12 +45,9 @@ Route::post('/resumes/create-step7', 'CurriculumController@postCreateStep7');
 Route::get('/resumes/uploadFiles', 'UploadController@uploadFiles');
 Route::post('/resumes/uploadFiles', 'UploadController@postUploadFiles');
 
+Route::get('/home', 'HomeController@index')->name('home');
 
-
-
-
-
-
+Route::get('/resumes/resumeFormat', 'ResumeFormatController@resumeFormat');
 
 Auth::routes();
 

@@ -13,7 +13,7 @@ class PersonalInfo extends Model
     * @var array
     */
    protected $fillable = [
-       'name', 'lastName', 'birthdate', 'identity', 'civilStatus', 'address', 'phone', 'cellPhone', 'email',
+       'user_id', 'name', 'lastName', 'birthdate', 'identity', 'civilStatus', 'address', 'phone', 'cellPhone', 'email',
    ];
    
 

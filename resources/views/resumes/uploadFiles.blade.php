@@ -50,8 +50,9 @@
                 <div class="form-group">
                     <label for="buttons"></label>
                     <br>
-                    <a type="button" href="/resumes/create-step7" class="btn btn-warning">Back</a>
+                    <a type="button" href="/resumes/create-step7" class="btn btn-success">Back</a>
                     <input type="submit" class="btn btn-primary" value="Upload" name="submit">
+                    <a type="button" href="/resumes/resumeFormat" class="btn btn-danger">Finalizar</a>
                 </div>
             </div>
             

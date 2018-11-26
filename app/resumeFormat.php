@@ -1,10 +1,10 @@
 <?php
 
 namespace App;
-use Illuminate\Notifications\Notifiable;
+
 use Illuminate\Database\Eloquent\Model;
 
-class PrincipalFunctions extends Model
+class resumeFormat extends Model
 {
     use Notifiable;
     /**
@@ -13,17 +13,15 @@ class PrincipalFunctions extends Model
     * @var array
     */
    protected $fillable = [
-    'user_id', 'functions', 
+       'user_id', 'name', 'lastName', 'birthdate', 'identity', 'civilStatus', 'address', 'phone', 'cellPhone', 'email',
    ];
    
-
- 
    /**
     * The attributes that should be hidden for arrays.
     *
     * @var array
     */
-   protected $hidden = [
-      # 'remember_token',
-   ];
+    protected $hidden = [
+        # 'remember_token',
+     ];
 }

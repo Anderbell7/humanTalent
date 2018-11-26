@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Home</title>
+        <title><img src="https://www.aldeamo.com/wp-content/uploads/2018/09/logo-x200ancho.png" srcset="https://www.aldeamo.com/wp-content/uploads/2018/09/logo-x200ancho.png 1x, https://www.aldeamo.com/wp-content/uploads/2018/09/logo-x400ancho.png 2x" width="200" height="53" style="max-height: 53px; height: auto;" alt="Aldeamo Logo" retina_logo_url="https://www.aldeamo.com/wp-content/uploads/2018/09/logo-x400ancho.png" class="fusion-standard-logo"></title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -79,16 +79,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Home
+                CV Manager
+                <br>    
+                   <img src="https://www.mintic.gov.co/portal/604/articles-63939_foto_marquesina.jpg" alt="">
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                
             </div>
         </div>
     </body>

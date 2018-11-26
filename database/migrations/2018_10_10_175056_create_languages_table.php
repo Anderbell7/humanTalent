@@ -15,14 +15,20 @@ class CreateLanguagesTable extends Migration
     {
         Schema::create('languages', function (Blueprint $table) {
             $table->increments('id');
-            #$table->integer('user_id');
-            $table->string('language');
-            $table->string('level');
-            $table->string('institute');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('language')->nullable();
+            $table->string('level')->nullable();
+            $table->string('institute')->nullable();
             $table->timestamps();
             
-           # $table->foreign('user_id')->references('id')->on('users');
+            #$table->foreign('user_id')->references('id')->on('users');
+            #$table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('set null');
+
         });
+
+        Schema::enableForeignKeyConstraints();
+        Schema::disableForeignKeyConstraints();
     }
 
     /**
@@ -33,5 +39,6 @@ class CreateLanguagesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('languages');
+        Schema::enableForeignKeyConstraints();
     }
 }

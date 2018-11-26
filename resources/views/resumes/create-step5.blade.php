@@ -12,9 +12,15 @@
     </div>
     
     <h1>Complement Education</h1>
+    <p>(relate in chronological order the courses or workshops held as a consolidation of the knowledge acquired in their formal education. * It is necessary to attach supports *)</p>
+
     <hr>
     <form action="/resumes/create-step5" method="post">
         {{ csrf_field() }}
+        <div style="display: none">
+            <label for="title">id</label>
+            <input type="text" value="{{ auth()->user()->id }}" class="form-control" id="user_id"  name="user_id">
+        </div>
         <div class="form-group">
             <label for="modality">Modality</label>
             <input type="text" value="{{{ $curriculum->modality or '' }}}" class="form-control" id="taskModality"  name="modality">

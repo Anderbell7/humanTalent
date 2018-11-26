@@ -15,14 +15,19 @@ class CreateComplementEducationsTable extends Migration
     {
         Schema::create('complement_educations', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('modality');
-            $table->string('course');
-            $table->string('hourlyintensity');
-            $table->string('entity');
-            $table->date('startDate');
-            $table->date('endDate');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('modality')->nullable();
+            $table->string('course')->nullable();
+            $table->string('hourlyintensity')->nullable();
+            $table->string('entity')->nullable();
+            $table->date('startDate')->nullable();
+            $table->date('endDate')->nullable();
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
+        Schema::disableForeignKeyConstraints();
     }
 
     /**

@@ -14,7 +14,7 @@ class complementEducation extends Model
     * @var array
     */
    protected $fillable = [
-       'modality', 'course', 'hourlyintensity', 'entity', 'startDate', 'endDate',  
+    'user_id', 'modality', 'course', 'hourlyintensity', 'entity', 'startDate', 'endDate',  
    ];
 
  

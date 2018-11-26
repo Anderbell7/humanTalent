@@ -13,7 +13,7 @@ class WorkExperience extends Model
     * @var array
     */
    protected $fillable = [
-       'company', 'startDate', 'endDate', 'duration', 'boss', 'phone', 'functions', 
+    'user_id', 'company', 'startDate', 'endDate', 'duration', 'boss', 'phone', 'functions', 
    ];
 
  
